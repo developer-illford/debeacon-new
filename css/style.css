@@ -942,7 +942,7 @@ header.smaller #mainmenu>li>a {
   padding-top: 25px;
   padding-bottom: 25px;
   text-decoration: none;
-  color: #ffffff; /* default white */
+  color: #ffffff;
   text-align: center;
   outline: none;
   transition: color 0.3s ease; /* smooth scroll color transition */
@@ -18902,32 +18902,26 @@ img {
   color: #bd9f67;
 }
 
+
 .admissions-banner {
-  width: 100%;
-  background: linear-gradient(135deg, #AEDFF7, #FFF9C4);
-
-
-  color: #333;
-  padding: 30px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* centers vertically */
+  align-items: center; /* centers horizontally */
   text-align: center;
-  animation: slideFadeIn 1s ease-out forwards;
-  opacity: 0;
-  /* Start hidden for animation */
-  position: relative;
-  overflow: hidden;
+  min-height: 300px; /* optional: ensures some vertical space */
+  animation: slideFadeIn 0.8s ease forwards;
 }
 
+
 .admissions-banner h2 {
-  font-size: 30px;
+  font-size: 50px;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
 .admissions-banner p {
-  font-size: 18px;
+  font-size: 25px;
   max-width: 800px;
   margin: 10px auto 20px;
   font-family: "Poppins", sans-serif;
@@ -19427,4 +19421,8 @@ img {
 .subfooter a{
   text-decoration: none;
   color: #094291 !important;
+}
+
+.about-page #mainmenu > li > a {
+    color: #000000 !important;
 }
