@@ -18931,6 +18931,7 @@ img {
   font-size: 50px;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .admissions-banner p {
@@ -18938,6 +18939,8 @@ img {
   max-width: 800px;
   margin: 10px auto 20px;
   font-family: "Poppins", sans-serif;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+   -webkit-text-stroke:0.7px #ffffff;  /* stroke thickness and color */
 }
 
 .admissions-banner .btn {
@@ -19443,29 +19446,55 @@ img {
   color: #000000 !important;
 }
 
+/* ---------- Layout Container ---------- */
 .service-body {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 50px;
   padding: 60px 10%;
-  align-items: flex-start;
+  font-family: "Marcellus", serif;
 }
 
+.service-body .left-side,
+.service-body .right-side {
+  flex: 1;
+}
+
+.service-body .left-side {
+  text-align: left;
+}
+
+.service-body .right-side {
+  display: flex;
+  justify-content: center;
+}
+
+.service-body:nth-child(even) {
+  flex-direction: row !important;
+  /* Keep same direction for all */
+}
+
+/* ---------- LEFT SIDE ---------- */
 .left-side {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
+/* ---------- Review Card ---------- */
 .review-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .review-card h5 {
   margin: 10px 0;
+  font-family: "Sora", sans-serif;
 }
 
 .avatars {
@@ -19489,41 +19518,83 @@ img {
   font-weight: 600;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+/* ---------- Image Stack ---------- */
+.image-stack {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
 }
 
-.image-grid img {
+.left-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-images img,
+.right-image img {
   width: 100%;
   border-radius: 15px;
   object-fit: cover;
+  display: block;
 }
 
+/* left single image (short one) */
+.left-images img {
+  height: 320px;
+  width: 300px;
+}
+
+/* right tall image */
+.right-image img {
+  height: 502px;
+  width: 363px;
+  margin-top: -180px;
+  border-top-left-radius: 20px;
+  /* square corner */
+}
+
+/* ---------- RIGHT SIDE ---------- */
 .right-side {
-  flex: 1.3;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Section title */
 .section-title {
-  list-style: none;
+  list-style: disc;
   color: #007bff;
   font-size: 14px;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  margin-right: 250px;
+  /* move title slightly left */
+  text-transform: uppercase;
+
 }
+
+/* Heading and paragraph */
 
 .right-side h2 {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 15px;
+  line-height: 1.3;
+  font-family: "Marcellus", serif;
 }
 
-.right-side p {
-  color: #555;
-  line-height: 1.6;
+.right-side  p{
+  font-size: 15px;
+  /* max-width: 90%; */
+  /* keeps text readable and not stretched */
   margin-bottom: 20px;
+  padding-left: 30px;
+  font-family: "Sora", sans-serif;
+
 }
 
+/* ---------- Remedial Sections ---------- */
 .remedial-section {
   display: flex;
   gap: 30px;
@@ -19539,10 +19610,22 @@ img {
 .remedial-section-right h4 {
   margin-bottom: 10px;
 }
+.remedial-section-left p,
+.remedial-section-right p {
+  max-width: 100%;
+  padding-left: 0;
+  line-height: 1.6;
+  color: #333;
+}
 
 .remedial-section-right ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.remedial-section-right li {
+  font-size: 15px;
 }
 
 .remedial-section-right li::before {
@@ -19550,6 +19633,7 @@ img {
   color: #007bff;
 }
 
+/* ---------- Button ---------- */
 .book-btn {
   background: #007bff;
   color: #fff;
@@ -19557,20 +19641,148 @@ img {
   padding: 10px 25px;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 15px;
+
+  transition: 0.3s ease;
 }
 
 .book-btn:hover {
   background: #0056b3;
 }
 
-/* Responsive */
+.sec-service-review-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-left: 50%;
+}
+
+.sec-service-review-card h5 {
+  margin: 10px 0;
+}
+
+.third-review-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-right: 50%;
+  margin-bottom: 15%;
+}
+
+.third-review-card h5 {
+  margin: 10px 0;
+}
+
+.services-scroll {
+  text-align: center;
+  margin: 100px 0;
+}
+
+.flip-box {
+  position: relative;
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 950px;
+  perspective: 1500px;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+
+.service-body {
+  display: flex;
+  gap: 50px;
+  padding: 60px 10%;
+  align-items: flex-start;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: rotateX(-90deg) translateZ(-100px);
+  transform-origin: bottom center;
+  transition: transform 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95), opacity 0.6s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.service-body.active {
+  opacity: 1;
+  transform: rotateX(0deg);
+  position: relative;
+  z-index: 2;
+}
+
+.service-body.exiting {
+  opacity: 0;
+  transform: rotateX(90deg) translateZ(-100px);
+  z-index: 1;
+}
+
+.scroll-hint {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #007bff;
+  opacity: 0.8;
+  animation: bounceHint 2s infinite;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes bounceHint {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
 @media (max-width: 992px) {
   .service-body {
     flex-direction: column;
+    padding: 40px 5%;
+  }
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .service-body {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .right-side,
+  .left-side {
+    width: 100%;
+  }
+
+  .image-stack {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-side {
+    margin-top: 40px;
   }
 
   .remedial-section {
     flex-direction: column;
+  }
+
+  .review-card {
+    width: 100%;
   }
 }
