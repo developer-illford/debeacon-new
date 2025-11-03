@@ -18940,7 +18940,8 @@ img {
   margin: 10px auto 20px;
   font-family: "Poppins", sans-serif;
   text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-   -webkit-text-stroke:0.7px #ffffff;  /* stroke thickness and color */
+  -webkit-text-stroke: 0.7px #ffffff;
+  /* stroke thickness and color */
 }
 
 .admissions-banner .btn {
@@ -19446,6 +19447,10 @@ img {
   color: #000000 !important;
 }
 
+.team-page #mainmenu>li>a {
+  color: #000000 !important;
+}
+
 /* ---------- Layout Container ---------- */
 .service-body {
   display: flex;
@@ -19584,7 +19589,7 @@ img {
   font-family: "Marcellus", serif;
 }
 
-.right-side  p{
+.right-side p {
   font-size: 15px;
   /* max-width: 90%; */
   /* keeps text readable and not stretched */
@@ -19610,6 +19615,7 @@ img {
 .remedial-section-right h4 {
   margin-bottom: 10px;
 }
+
 .remedial-section-left p,
 .remedial-section-right p {
   max-width: 100%;
@@ -19748,12 +19754,103 @@ img {
   }
 }
 
+
+/* Intro slide unified with others */
+.intro-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: #fff; /* same as other slides */
+  color: #222;
+  font-family: "Sora", sans-serif;
+  height: 100%; /* match service-body height inside flip-box */
+  padding: 10px 10% 60px !important; /* consistent with .service-body */
+  border-radius: 0; /* remove separate rounded box look */
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: rotateX(-90deg) translateZ(-100px);
+  transform-origin: bottom center;
+  transition: transform 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95), opacity 0.6s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.intro-slide > div {
+  transform: translateY(-50px); /* move content upward */
+}
+
+
+/* Subtitle badge */
+.intro-subtitle{
+  font-size: 0.9rem !important;
+  padding: 4px 10px !important;
+  margin-bottom: 10px !important;
+  display: inline-block;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: #f8e584;
+  
+
+}
+
+
+/* Main heading */
+.intro-slide h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+  font-family: "Marcellus", serif;;
+}
+
+/* Highlighted cursive part */
+.intro-slide h1 .id-color,
+.intro-slide h1 .id-color-2 {
+  font-family: "Dancing Script", cursive;
+  color: #0c4492;
+  font-weight: 600;
+}
+
+/* Description text */
+.intro-slide .lead {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #667085;
+  max-width: 650px;
+  margin: 20px auto 40px;
+}
+
+/* Main button */
+.intro-slide .btn-main {
+  display: inline-block;
+  background: #0c4492;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(120, 119, 204, 0.25);
+  font-family: "Sora", sans-serif;
+}
+
+.intro-slide .btn-main:hover {
+  /* background: #f8e584;
+  color: #000; */
+  box-shadow: 0 6px 16px  rgba(120, 119, 204, 0.25);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 992px) {
   .service-body {
     flex-direction: column;
     padding: 40px 5%;
   }
 }
+
 
 
 /* ---------- Responsive ---------- */
@@ -19784,5 +19881,178 @@ img {
 
   .review-card {
     width: 100%;
+  }
+}
+/* =========================================================
+   ✅ RESPONSIVE DESIGN (Tablet & Mobile)
+   ========================================================= */
+
+/* ---------- TABLET VIEW (769px–1024px) ---------- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .flip-box {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .service-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 5%;
+    height: auto;
+  }
+
+  .right-side,
+  .left-side {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .right-side h2 {
+    font-size: 28px;
+  }
+
+  .right-side p {
+    padding-left: 0;
+    font-size: 16px;
+  }
+
+  .remedial-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .remedial-section-left,
+  .remedial-section-right {
+    width: 90%;
+    text-align: left;
+  }
+
+  .image-stack {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .left-images img,
+  .right-image img {
+    width: 250px;
+    height: auto;
+  }
+
+  .review-card,
+  .sec-service-review-card,
+  .third-review-card {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .intro-slide h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-slide .lead {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- MOBILE VIEW (≤768px) ---------- */
+@media (max-width: 768px) {
+  .flip-box {
+    height: auto;
+    padding: 40px 0;
+  }
+
+ .service-body {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 5%;
+  }
+
+  /* Always make both sides full width */
+  .left-side,
+  .right-side {
+    width: 100% !important;
+    text-align: center;
+    padding: 0;
+  }
+
+  /* Force images to appear first in all services */
+  .service-body .right-side,
+  .service-body .left-side:has(img) {
+    order: 1 !important;
+  }
+
+  
+  .right-side h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .right-side p {
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .remedial-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .remedial-section-left,
+  .remedial-section-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .book-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .image-stack {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .left-images img,
+  .right-image img {
+    width: 90%;
+    height: auto;
+    margin-top: 0 !important;
+  }
+
+  .review-card,
+  .sec-service-review-card,
+  .third-review-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Intro section */
+  .intro-slide h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-slide .lead {
+    font-size: 0.9rem;
+    margin: 15px auto 30px;
+  }
+
+  .intro-slide .btn-main {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  .scroll-hint {
+    display: none;
   }
 }
