@@ -1,3 +1,5 @@
+if (window.innerWidth > 1024) {
+
 const slides = document.querySelectorAll(".service-body");
 const flipBox = document.querySelector(".flip-box");
 const scrollHint = document.querySelector(".scroll-hint");
@@ -49,3 +51,25 @@ flipBox.addEventListener("touchend", (e) => {
     else flipTo((current - 1 + slides.length) % slides.length, "up");
   }
 });
+
+} else {
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".service-body");
+  let current = 0;
+  const total = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  showSlide(current);
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % total;
+    slides[current].classList.add("active");
+  }, 5000);
+});
+}
