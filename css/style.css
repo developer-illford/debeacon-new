@@ -146,6 +146,8 @@ html {
   background: var(--bg-dark-1);
 }
 
+
+
 body {
 
   /* font-family: var(--body-font); */
@@ -19451,87 +19453,154 @@ img {
   color: #000000 !important;
 }
 
-.tick-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid #007bff;
-  /* Blue circle */
-  color: #007bff;
-  /* Blue tick */
-  font-weight: bold;
-  font-size: 16px;
+.services-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f9fb;
+  padding-top: 200px;
 }
 
-.mental-support {
-  width: 406px;
-  height: 415px;
-  border-radius: 20px;
+/* SLIDER WRAPPER */
+.services-section .services-scroll {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.closing-agreement {
-  width: 406px;
-  height: 415px;
-  border-radius: 20px;
+/* SLIDES */
+.services-section .slide {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
 }
 
-.leadership {
-  width: 345px;
-  height: 504px;
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+.services-section .slide.active {
+  top: 0;
+  opacity: 1;
+  z-index: 2;
 }
 
-.diet-control {
-  width: 408px;
-  height: 634px;
-  border-radius: 20px;
+.services-section .slide.exit {
+  top: -100%;
+  opacity: 0;
+  z-index: 1;
 }
 
-.diet-consulting {
-  width: 406px;
-  height: 305px;
-  border-radius: 20px;
+/* TYPOGRAPHY */
+.intro-heading {
+  font-size: 60px;
+  font-family: "Marcellus", serif;
+  font-weight: 400;
 }
 
-.right-side-heading {
-  color: #262626;
+.intro-para {
+  font-size: 20px;
+  width: 90% !important;
+  margin: 0 auto !important;
+  font-family: "Sora", sans-serif;
+}
+
+.book-btn {
+  font-family: "Sora", sans-serif;
+  margin-top: 20px !important;
+}
+
+.services-heading {
+  font-family: "Marcellus", serif;
   font-size: 40px;
-  font-family: "Marcellus", serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
-.right-side-para1 {
-  color: #838383;
+.services-para {
   font-size: 18px;
   font-family: "Sora", sans-serif;
-}
-
-.right-side-sub-heading1 {
-  color: #262626;
-  font-size: 20px;
-  font-family: "Marcellus", serif;
-  font-weight: 400;
-  font-style: normal;
-
+  max-width: 700px;
+  text-align: left;
+  margin: 0;
 
 }
 
-.right-side-sub-heading2 {
-  color: #262626;
-  font-size: 20px;
-  font-family: "Marcellus", serif;
-  font-weight: 400;
-  font-style: normal;
+.slide-imgs {
+  border-radius: 20px;
 }
 
-.right-side-para2 {
-  color: #838383;
-  font-size: 18px;
-  font-family: "Sora", sans-serif;
+.services-section .slide {
+  pointer-events: none;
+}
 
+.services-section .slide.active {
+  pointer-events: auto;
+}
+
+.book-btn {
+  pointer-events: auto;
+  /* ensure it can be clicked */
+  background: #1f86b6 !important;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  background: #094291 !important;
+  color: #ffffff;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .intro-para {
+    font-size: 18px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-para {
+    font-size: 16px;
+    max-width: 95%;
+  }
+}
+
+/* MOBILE STACKING */
+@media (max-width: 991px) {
+  .row.flex-lg-row-reverse {
+    flex-direction: column !important;
+  }
+
+  .slide .col-lg-6.d-flex.flex-column {
+    padding: 0 20px;
+  }
+
+  .row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .col-lg-6 {
+    margin-bottom: 20px;
+  }
+
+  .services-para {
+    font-size: 16px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .services-section .service-text h2 {
+    font-size: 28px;
+  }
 }

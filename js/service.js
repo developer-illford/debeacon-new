@@ -1,10 +1,21 @@
- // Flip effect on scroll inside container
-  const flipContainer = document.querySelector('.flip-container');
-  const flipInner = document.querySelector('.flip-card-inner');
+/* ===== Auto Slide Transition Script ===== */
+const slides = document.querySelectorAll(".slide");
+let current = 0;
 
-  flipContainer.addEventListener('scroll', () => {
-    const scrollTop = flipContainer.scrollTop;
-    const maxScroll = flipContainer.scrollHeight - flipContainer.clientHeight;
-    const rotateY = Math.min((scrollTop / maxScroll) * 180, 180);
-    flipInner.style.transform = `rotateY(${rotateY}deg)`;
-  });
+function showNextSlide() {
+  const total = slides.length;
+  const currentSlide = slides[current];
+  const nextSlide = slides[(current + 1) % total];
+
+  currentSlide.classList.remove("active");
+  currentSlide.classList.add("exit");
+
+  nextSlide.classList.remove("exit");
+  nextSlide.classList.add("active");
+
+  setTimeout(() => currentSlide.classList.remove("exit"), 1500);
+
+  current = (current + 1) % total;
+}
+
+setInterval(showNextSlide, 5000);
