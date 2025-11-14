@@ -19194,6 +19194,11 @@ img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.profile-wrapper {
+  max-width: 1500px;  /* Set the width you want */
+  margin: 0 auto;     /* Centers content */
+  padding: 0 20px;    /* Adds equal left-right spacing */
+}
 
 
 
@@ -19603,4 +19608,44 @@ img {
   .services-section .service-text h2 {
     font-size: 28px;
   }
+}
+
+.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+iframe {
+  width: 100%;
+  height: 350px;
+  /* uniform size */
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  iframe {
+    height: 250px;
+  }
+}
+
+.custom-arrow-carousel .carousel-control-prev {
+    left: -150px;   /* move more left */
+}
+
+.custom-arrow-carousel .carousel-control-next {
+    right: -150px;  /* move more right */
 }
