@@ -20034,3 +20034,7 @@ td {
 .remedial-img {
   top: 0px;
 }
+.terms-section {
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+}
