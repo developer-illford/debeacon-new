@@ -19915,106 +19915,129 @@ td {
   }
 }
 
- /* Container */
-  .ytShortsCarousel-container {
-    max-width: 1300px;
-    margin: 40px auto;
-    overflow: hidden;
-  }
+/* Container */
+.ytShortsCarousel-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  overflow: hidden;
+}
 
-  .ytShortsCarousel-track {
-    display: flex;
-    transition: transform 0.2s ease-out;
-    cursor: grab;
-  }
+.ytShortsCarousel-track {
+  display: flex;
+  transition: transform 0.2s ease-out;
+  cursor: grab;
+}
 
-  .ytShortsCarousel-track.dragging {
-    cursor: grabbing;
-  }
+.ytShortsCarousel-track.dragging {
+  cursor: grabbing;
+}
 
+.short-card {
+  flex-shrink: 0;
+  /* border-radius: 16px; */
+  overflow: hidden;
+  margin-right: 16px;
+  /* background: #000; */
+  transition: transform 0.3s ease;
+}
+
+.short-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.short-card:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
   .short-card {
-    flex-shrink: 0;
-    /* border-radius: 16px; */
-    overflow: hidden;
-    margin-right: 16px;
-    /* background: #000; */
-    transition: transform 0.3s ease;
+    width: 240px;
+    height: 420px;
   }
+}
 
-  .short-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (max-width: 1199px) and (min-width: 768px) {
+  .short-card {
+    width: 200px;
+    height: 360px;
   }
+}
 
-  .short-card:hover {
-    transform: scale(1.03);
+@media (max-width: 767px) {
+  .short-card {
+    width: 160px;
+    height: 280px;
+    margin-right: 10px;
   }
+}
 
-  /* Responsive */
-  @media (min-width: 1200px) {
-    .short-card { width: 240px; height: 420px; }
-  }
+/* Modal */
+.ytShortsCarousel-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  /* ensures above header */
+}
 
-  @media (max-width: 1199px) and (min-width: 768px) {
-    .short-card { width: 200px; height: 360px; }
-  }
+.ytShortsCarousel-modal.active {
+  display: flex;
+}
 
-  @media (max-width: 767px) {
-    .short-card { width: 160px; height: 280px; margin-right: 10px; }
-  }
+.ytShortsCarousel-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
 
-  /* Modal */
-  .ytShortsCarousel-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999; /* ensures above header */
-  }
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
 
-  .ytShortsCarousel-modal.active {
-    display: flex;
-  }
+.ytShortsCarousel-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-  .ytShortsCarousel-modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 450px;
-    aspect-ratio: 9 / 16;
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
-  }
+.ytShortsCarousel-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  line-height: 38px;
+  z-index: 9999;
+}
 
-  .ytShortsCarousel-modal iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+.ytShortsCarousel-close:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
 
-  .ytShortsCarousel-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255,255,255,0.3);
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 22px;
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-    line-height: 38px;
-    z-index: 9999;
-  }
+.ytShortsCarousel-track,
+.short-card,
+.short-card img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
 
-  .ytShortsCarousel-close:hover {
-    background: rgba(255,255,255,0.5);
-  }
 
 .remedial-img {
   width: 120%;
@@ -20034,7 +20057,8 @@ td {
 .remedial-img {
   top: 0px;
 }
+
 .terms-section {
-    padding-top: 20px !important;
-    padding-bottom: 40px !important;
+  padding-top: 20px !important;
+  padding-bottom: 40px !important;
 }
