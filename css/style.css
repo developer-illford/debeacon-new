@@ -20013,8 +20013,8 @@ td {
 
 .ytShortsCarousel-close {
   position: absolute;
-   top: -25px;   
-  right: 40px;
+   top: -20px;   
+  right: 34px;
   background: rgba(255, 255, 255, 0.3);
   border: none;
   border-radius: 50%;
@@ -20064,4 +20064,38 @@ td {
 .terms-section {
   padding-top: 20px !important;
   padding-bottom: 40px !important;
+}
+/* THANK YOU PAGE – SCOPED */
+.thankyou-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.thankyou-page .thankyou-wrapper {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.thankyou-page .thankyou-logo {
+    max-width: 180px;
+    margin-bottom: 30px;
+}
+
+.thankyou-page h1 {
+    color: #0b3c8a;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.thankyou-page p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.thankyou-page .thankyou-btn {
+    padding: 12px 28px;
 }
