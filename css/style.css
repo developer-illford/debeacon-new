@@ -5528,6 +5528,7 @@ ol.ol-style-1 li::before {
   counter-reset: item;
   margin: 0;
   padding: 0;
+  border-spacing: 0 13px;
 }
 
 .ol-style-1 li {
@@ -19306,9 +19307,9 @@ img {
     font-size: 26px;
   }
 
-.team-vision-box p{
-  font-size: 18px;
-}
+  .team-vision-box p {
+    font-size: 18px;
+  }
 }
 
 
