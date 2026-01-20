@@ -142,7 +142,7 @@ try {
     $mail->Port       = 587;
 
     $mail->setFrom('de.beacon.international@gmail.com');
-    $mail->addAddress('vishnupriyav8822@gmail.com'); // receive here
+    $mail->addAddress('contact@debeacon.in'); // receive here
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(true);
