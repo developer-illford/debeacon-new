@@ -19833,9 +19833,12 @@ td {
 
 }
 
-@media(max-width:360px) {
-  .diet-consulting-sm {
-    margin-right: 40px;
+@media(max-width:768px) {
+   .diet-consulting-col{
+    width:100%;
+   }
+  .diet-consulting-col .diet-consulting-sm {
+    width: 100%;
   }
 }
 
