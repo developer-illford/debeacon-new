@@ -20242,3 +20242,9 @@ td {
 .vibeon-img{
   width: 150%;
 }
+@media(max-width:768px){
+  .vibeon-img{
+    width: 100%;
+  }
+  
+}
