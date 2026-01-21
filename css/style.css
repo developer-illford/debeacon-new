@@ -19796,6 +19796,7 @@ td {
 @media(min-width:768px) {
   .focused-remedial-coaching-sm {
     display: none;
+
   }
 }
 
@@ -20082,9 +20083,15 @@ td {
   /* move image upward */
 }
 
-/* Hide mobile image by default (desktop) */
+
 .mobile-slide-img {
   display: none;
+}
+@media(max-width:768px){
+  .mobile-slide-img{
+    display: block;
+    
+  }
 }
 
 .remedial-img {
@@ -20239,12 +20246,20 @@ td {
     /* margin-top: 20px; */
   }
 }
-.vibeon-img{
+
+.vibeon-img {
   width: 150%;
 }
-@media(max-width:768px){
-  .vibeon-img{
+
+@media(max-width:768px) {
+  .vibeon-img {
     width: 100%;
   }
-  
+
+}
+
+@media(max-width:768px) {
+  .remedial-imgs-col, .remedial-imgs-col img {
+    width: 100% !important;
+  }
 }
