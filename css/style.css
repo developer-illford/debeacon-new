@@ -20292,4 +20292,8 @@ td {
   .remedial-imgs-col img {
     width: 100% !important;
   }
+  .remedial-programs-table td{
+    padding:0px !important;
+  }
 }
+
