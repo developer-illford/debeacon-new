@@ -988,6 +988,7 @@ header.smaller #mainmenu>li>a {
 .header-social-icons a {
   color: #fff;
   transition: color 0.3s ease;
+  
 
 }
 
@@ -999,13 +1000,14 @@ header.smaller #mainmenu>li>a {
 .header-social-icons {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+
 
 }
 
-.header-social-icons :hover {
+/* .header-social-icons :hover {
   color: #fff;
-}
+} */
 
 /* ===== Underline Effects ===== */
 #mainmenu a span:not(.badge) {
