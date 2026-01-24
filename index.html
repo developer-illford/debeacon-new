@@ -499,8 +499,8 @@
                                 <div class="row g-4 z-1000">
                                     <div class="col-6">
                                         <!-- <div class="spacer-single sm-hide"></div> -->
-                                        <img src="images/homepage-grid-lg.webp" alt="" class="lg-img wow fadeInUp">
-                                        <img src="images/homepage-grid-sm.webp" alt="" class="sm-img wow fadeInUp">
+                                        <img src="images/home-page-large.png" alt="" class="lg-img wow fadeInUp">
+                                        <img src="images/home-page-small.png" alt="" class="sm-img wow fadeInUp">
 
                                         <!-- <img src="images/gallery/1.webp"
                                             class="img-fluid rounded-10px mb-4 w-70 ms-30 wow fadeInLeft"
@@ -523,7 +523,8 @@
                         <div class="col-lg-6">
                             <div class="subtitle wow fadeInUp mb-3">Welcome</div>
                             <h2 class="wow fadeInUp">Where Every Step <span
-                                    class="d-block mt-2 alt-font fw-500 fs-72 id-color-2">Finds<span class=" d-block d-sm-inline mt-4"> Light</span></h2>
+                                    class="d-block mt-2 alt-font fw-500 fs-72 id-color-2">Finds<span
+                                        class=" d-block d-sm-inline mt-4"> Light</span></h2>
                             <p class="wow fadeInUp" style="text-align: justify;">At De Beacon, we guide children,
                                 families, and individuals toward
                                 learning, confidence, and emotional well-being—just like a beacon of light showing the
@@ -537,19 +538,23 @@
                                         <div class="col-md-6">
                                             <ul class="ul-style-2 text-dark fw-600">
                                                 <li>Expert Remedial Coaching & Mentoring</li>
-                                                <li>Motivational Programs & Personal Development Training</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <ul class="ul-style-2 text-dark fw-600">
+
                                                 <li>Professional Psychological Counselling</li>
                                                 <li>Holistic Nutrition & Wellness Consulting</li>
+
                                             </ul>
                                         </div>
                                         <div class="col-md-6">
                                             <ul class="ul-style-2 text-dark fw-600">
                                                 <li>VibeOn – Confidence, Life Skills & Leadership Program (Grades 3–9)
                                                 </li>
+                                                <li>Motivational Programs & Personal Development Training</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="ul-style-2 text-dark fw-600">
+
 
                                             </ul>
                                         </div>
@@ -618,7 +623,7 @@
 
                     <div class="row align-items-center">
                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <img src="images/services/service-1.webp" class="img-fluid slide-imgs" data-aos="fade-up"
+                            <img src="images/services/remedial-new.webp" class="img-fluid slide-imgs" data-aos="fade-up"
                                 alt="Child learning with a tutor">
                         </div>
                         <div class="col-12 col-md-6">
@@ -667,8 +672,8 @@
                 <div class="container service-block" data-aos="fade-up">
                     <div class="row align-items-center">
                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <img src="images/services/service-3-new.webp" class="img-fluid slide-imgs" data-aos="fade-up"
-                                alt="Workshops">
+                            <img src="images/services/service-3-new.webp" class="img-fluid slide-imgs"
+                                data-aos="fade-up" alt="Workshops">
                         </div>
                         <div class="col-12 col-md-6">
                             <h2 class="services-heading">Transformative Training Services</h2>
@@ -1487,30 +1492,41 @@
             autoScroll();
 
             // --- Popup Modal ---
-            const modal = document.getElementById('ytShortsModal');
-            const iframe = document.getElementById('ytShortsIframe');
-            const closeBtn = document.getElementById('ytShortsClose');
+            // const modal = document.getElementById('ytShortsModal');
+            // const iframe = document.getElementById('ytShortsIframe');
+            // const closeBtn = document.getElementById('ytShortsClose');
 
+            // track.querySelectorAll('.short-card').forEach(card => {
+            //     card.addEventListener('click', () => {
+            //         const id = card.getAttribute('data-video-id');
+            //         iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1`;
+
+            //         modal.classList.add('active');
+            //     });
+            // });
+
+            // closeBtn.addEventListener('click', () => {
+            //     iframe.src = '';
+            //     modal.classList.remove('active');
+            // });
+
+            // modal.addEventListener('click', e => {
+            //     if (e.target === modal) {
+            //         iframe.src = '';
+            //         modal.classList.remove('active');
+            //     }
+            // });
             track.querySelectorAll('.short-card').forEach(card => {
                 card.addEventListener('click', () => {
                     const id = card.getAttribute('data-video-id');
-                    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1`;
 
-                    modal.classList.add('active');
+                    window.open(
+                        `https://www.youtube.com/shorts/${id}`,
+                        '_blank'
+                    );
                 });
             });
 
-            closeBtn.addEventListener('click', () => {
-                iframe.src = '';
-                modal.classList.remove('active');
-            });
-
-            modal.addEventListener('click', e => {
-                if (e.target === modal) {
-                    iframe.src = '';
-                    modal.classList.remove('active');
-                }
-            });
         })();
     </script>
 
