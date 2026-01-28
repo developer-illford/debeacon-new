@@ -20302,3 +20302,10 @@ td {
       padding: 0px !important;
     }
   }
+  
+@media (max-width: 768px) {
+  .hero-malayalam {
+    font-size: 26px;   
+    line-height: 130%;
+  }
+}
